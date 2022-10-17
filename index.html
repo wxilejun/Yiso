@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全检测中... - Yiso</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            /* height: 100%; */
+        }
+
+        body {
+            position: relative;
+            font-size: 15px;
+            font-weight: 200;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .Info {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        .font {
+            font-weight: 400;
+            font-size: 200%;
+        }
+
+        #button {
+            display: none;
+            padding: 10px;
+            background-color: #ffeeee;
+            border-radius: 2px;
+        }
+
+        #Info {
+            display: block;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Info">
+        <span>一搜搜索引擎，一搜就有，一搜就知道</span>
+        <span class="font block padding">安全验证</span>
+        <span id="Info">正在检测您的网络环境，请稍后<span id="loading"></span></span>
+        <div>
+            <span class="block padding" style="margin-top: 10px; user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent;" id="button">完成验证</span>
+        </div>
+
+        <div class="Form" style="display: none;">
+            <form action="./index.php" method="post" id="form">
+                <input type="text" name="verificationCode" value="true">
+            </form>
+        </div>
+
+        <script>            
+            var loading = document.getElementById('loading');
+            var form = document.getElementById('form');
+            var button = document.getElementById('button');
+            var Info = document.getElementById('Info');
+            
+            function addLoading () {                
+                if (loading.innerText != "......") {
+                    loading.innerText = loading.innerText + ".";
+                } else if (loading.innerText = "......") {
+                    Info.innerText = "完成验证: 网络状态 200";
+                }
+            }
+
+            button.onclick = function () {
+                form.submit();
+                // location.href = './index.php';
+            }
+
+            // 定时启动
+            setInterval(() => {
+                addLoading(loading);
+            }, 50);
+
+            setTimeout(() => {
+                form.submit();
+            }, 360);
+
+            setTimeout(() => {
+                button.style.display = 'inline-block';
+            }, 1000);
+        </script>
+    </div>
+</body>
+</html>

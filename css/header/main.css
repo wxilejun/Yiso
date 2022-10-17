@@ -1,0 +1,81 @@
+header#Header {
+    height: 60px;
+    /* background-color: #dddddd; */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border-bottom: 1px solid #dddddd;
+    z-index: 4;
+    backdrop-filter: blur(50px);
+}
+
+div.headerRight {
+    height: 60px;
+    width: 50%;
+    /* background-color: #ff0000; */
+    position: absolute;
+    right: 0;
+    opacity: 0.5;
+    /* text-align: right; */
+    /* padding: 0 5%; */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+span.headerInfo {
+    font-weight: 200;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    float: right;
+    line-height: 60px;
+    margin-right: 10%;
+}
+
+div.headerLeft {
+    height: 60px;
+    /* background-color: #000000; */
+    width: 50%;
+    /* margin-right: 50%; */
+    /* padding: 0 5%; */
+    overflow: auto;
+}
+
+span.headerTitle {
+    font-size: 20px;
+    font-weight: 600;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+    margin-left: 10%;
+    line-height: 60px;
+    user-select: none;
+}
+
+div.Filter {
+    height: 60px;
+    width: 100%;
+    background: url('../../img/background_01.jpg') no-repeat;
+    position: fixed;
+    top: 0;
+    filter: blur(5px);
+    z-index: 2;
+    overflow: hidden;
+    background-size: 100%;
+}
+
+div.Logo {
+    margin-top: 40px;
+    /* padding-top: 60px; */
+}
+
+canvas#canvasText {
+    display: block;
+    margin: 0 auto;
+    overflow: auto;
+    width: 200px;
+    white-space: nowrap;
+    padding: 5px;
+}
+
+.padding-top div {
+    padding-top: 80px;
+}
